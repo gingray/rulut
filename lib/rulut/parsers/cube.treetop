@@ -1,45 +1,49 @@
-grammar Cube
-    rule document
-        ((comment / title / domain_min / domain_max / cube_line / other) line?)+
-    end
+module Rulut
+module Parser
+    grammar CubeGrammar
+        rule document
+            ((comment / title / domain_min / domain_max / cube_line / other) line?)+
+        end
 
-    rule comment
-        '#' text
-    end
+        rule comment
+            '#' text <Comment>
+        end
 
-    rule title
-        'TITLE' space text
-    end
+        rule title
+            'TITLE' space text <Title>
+        end
 
-    rule domain_min
-        'DOMAIN_MIN' space number space number space number
-    end
+        rule domain_min
+            'DOMAIN_MIN' space number space number space number
+        end
 
-    rule domain_max
-        'DOMAIN_MAX' space number space number space number
-    end
+        rule domain_max
+            'DOMAIN_MAX' space number space number space number
+        end
 
-    rule text
-        [^\n]+
-    end
+        rule text
+            [^\n]+
+        end
 
-    rule line
-        [\n]+
-    end
+        rule line
+            [\n]+
+        end
 
-    rule space
-        ' '
-    end
+        rule space
+            ' '
+        end
 
-    rule number
-        [0-9.]+
-    end
+        rule number
+            [0-9.]+ <ColorValue>
+        end
 
-    rule cube_line
-        number space number space number space*
-    end
+        rule cube_line
+            number space number space number space* <CubeLine>
+        end
 
-    rule other
-        [^\n]+
+        rule other
+            [^\n]+
+        end
     end
+end
 end
