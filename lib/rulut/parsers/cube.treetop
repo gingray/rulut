@@ -1,5 +1,5 @@
 module Rulut
-module Parser
+class Parser
     grammar CubeGrammar
         rule document
             ((comment / title / domain_min / domain_max / cube_line / other) line?)+
