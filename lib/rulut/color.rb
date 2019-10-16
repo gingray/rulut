@@ -22,6 +22,20 @@ module Rulut
         hue += 360.0 if hue.negative?
         [hue.round, (saturation * 100).round , (luminance * 100).round]
       end
+
+      def hsl_to_rgb(h,s,l)
+        if h.zero? && s.zero?
+          return [(RGB_MAX * l).round, (RGB_MAX * l).round, (RGB_MAX * l).round]
+        end
+        t_1 = 0
+        t_1 = l * (1.0 + s) if l < 0.5
+        t_1 = l + s - l * s if l >= 0.5
+        t_2 = l * 2.0 - t_1
+        h_1 = h / 360.0
+        t_r = h_1 + 0.333
+        t_g = h_1
+        t_b = h_1 - 0.333
+      end
     end
   end
 end
