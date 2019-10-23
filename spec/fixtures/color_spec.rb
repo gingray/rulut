@@ -1,4 +1,4 @@
-RSpec.describe Rulut, focus: true do
+RSpec.describe Rulut do
   describe 'Rulut::Color' do
     let(:input) { [33, 23, 42] }
     let(:result) { Rulut::Color.rgb_to_hsl(*input) }

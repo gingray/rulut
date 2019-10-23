@@ -3,6 +3,7 @@ require 'pry'
 require "rulut"
 
 FIXTURE_PATH = File.expand_path('../fixtures', __FILE__)
+SPEC_TMP_PATH = File.expand_path('../tmp', __FILE__)
 
 module Helper
   def file_fixture(path)

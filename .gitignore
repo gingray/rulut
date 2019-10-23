@@ -12,3 +12,4 @@
 cinematic.cube
 .DS_Store
 .ruby-version
+spec/tmp/

@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
 
   spec.add_runtime_dependency 'treetop', '~> 1.6.10'
+  spec.add_runtime_dependency 'rmagick', '~> 4.0.0'
 end
